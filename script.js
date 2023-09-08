@@ -6,4 +6,15 @@ function capFirst(string) {
     return newArr.join('')
 }
 
-export { capFirst }
+function revString(string) {
+    const newArr = [...string]
+    const revStringArr = [];
+
+    for (let i = string.length - 1; i >= 0; i--){
+        revStringArr.push(string[i]);
+    }
+
+    return revStringArr.join('');
+}
+
+export { capFirst, revString }
