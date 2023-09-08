@@ -14,3 +14,7 @@ test('Does some form of Addition, Division, Subtraction, or Multiplication', () 
     expect(myCalc.subtract(10, 7)).toEqual(3);
     expect(myCalc.multiply(2, 20)).toEqual(40);
 })
+
+test('Returns a string scrambled by a Caesar Cipher', () => {
+    expect(caesarCiper("Lemonz is the code.").toBe("Ngoqpa ku vjg eqfg."));
+})
