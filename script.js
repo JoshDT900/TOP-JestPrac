@@ -17,4 +17,27 @@ function revString(string) {
     return revStringArr.join('');
 }
 
-export { capFirst, revString }
+class Calc {
+    constructor() {       
+    }
+
+    add(x, y) {
+        return x + y;
+    }
+
+    divide(x, y) {
+        return x / y;
+    }
+
+    subtract(x, y) {
+        return x - y;
+    }
+
+    multiply(x, y) {
+        return x * y;
+    }
+}
+
+const myCalc = new Calc();
+
+export { capFirst, revString, myCalc }
