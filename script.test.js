@@ -1,4 +1,4 @@
-import { capFirst, revString, myCalc } from "./script";
+import { capFirst, revString, myCalc, caesarCipher } from "./script";
 
 test('Capitalize first letter of a word', () => {
     expect(capFirst("bunny")).toBe("Bunny");
@@ -16,5 +16,5 @@ test('Does some form of Addition, Division, Subtraction, or Multiplication', () 
 })
 
 test('Returns a string scrambled by a Caesar Cipher', () => {
-    expect(caesarCiper("Lemonz is the code.").toBe("Ngoqpa ku vjg eqfg."));
+    expect(caesarCipher("Lemonz is the code.")).toBe("Ngoqpb ku vjg eqfg.");
 })

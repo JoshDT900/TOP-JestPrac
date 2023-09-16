@@ -44,34 +44,43 @@ function letterObj() {
     const letterObj = {}
     
     for (let i = 0; i < alphabetArr.length; i++){
-        letterObj[alphabetArr[i]] = i;
+        letterObj[i] = alphabetArr[i];
     }
-    
+
     return letterObj;
 }
 
-function caesarCiper(string) {
+function caesarCipher(string) {
     const newArr = [...string];
     const scramArr = [];
     const letObj = letterObj();
+    
+    for (let i = 0; i < newArr.length; i++) {
+        if (newArr[i] === " " || newArr[i] === "." || newArr[i] === "?" || newArr[i] === "!") {
+            scramArr.push(newArr[i]);
+        }
 
-    for (let key in letObj) {
-        // console.log(letObj[key]);
-        for (let i = 0; i < newArr.length; i++){
-            console.log(newArr[i]);
-            if (key == newArr[i]) {
-                console.log(letObj[key]);
-                // console.log(key);
+        for (let key in letObj){
+            if (letObj[key] === newArr[i] || letObj[key].toUpperCase() === newArr[i]) {
+                if (parseInt(key) + 2 > 25) {
+                    let newKey = parseInt(key) - 26;
+                    scramArr.push(letObj[parseInt(newKey) + 2])
+                    console.log(scramArr);
+                } else if (letObj[key].toUpperCase() === newArr[i]) {
+                    let newKey = letObj[parseInt(key) + 2];
+                    scramArr.push(newKey.toUpperCase());
+                } else {
+                    scramArr.push(letObj[parseInt(key) + 2]);     
+                }             
+                
             }
-
         }
     }
+    console.log(scramArr.join(""));
 
-    return scramArr.join(' ');
+    return scramArr.join("");
 }
-
-caesarCiper("Lemonz is the code.")
 
 const myCalc = new Calc();
 
-export { capFirst, revString, myCalc }
+export { capFirst, revString, myCalc, caesarCipher }
