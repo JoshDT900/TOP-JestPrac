@@ -1,4 +1,4 @@
-import { capFirst, revString, myCalc, caesarCipher } from "./script";
+import { capFirst, revString, myCalc, caesarCipher, analyzeArray } from "./script";
 
 test('Capitalize first letter of a word', () => {
     expect(capFirst("bunny")).toBe("Bunny");
@@ -17,4 +17,8 @@ test('Does some form of Addition, Division, Subtraction, or Multiplication', () 
 
 test('Returns a string scrambled by a Caesar Cipher', () => {
     expect(caesarCipher("Lemonz is the code.")).toBe("Ngoqpb ku vjg eqfg.");
+})
+
+test('Return an object with Min, Max, Avg, and Length fo given arr', () => {
+    expect(analyzeArray([1, 2, 3, 4, 5])).toEqual({"Average": 3, "Min": 1, "Max": 5, "Length": 5})
 })
